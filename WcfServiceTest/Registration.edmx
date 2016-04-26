@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="registrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="building">
+          <Key>
+            <PropertyRef Name="buildingID" />
+          </Key>
+          <Property Name="buildingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="buildingNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingName" Type="nvarchar(max)" />
+          <Property Name="facultyCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="course">
+          <Key>
+            <PropertyRef Name="courseID" />
+          </Key>
+          <Property Name="courseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="courseCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseName" Type="nvarchar" MaxLength="255" />
+          <Property Name="teachType" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="faculty">
+          <Key>
+            <PropertyRef Name="facultyID" />
+          </Key>
+          <Property Name="facultyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="facultyCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyAbbr" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="inter">
+          <Key>
+            <PropertyRef Name="interID" />
+          </Key>
+          <Property Name="interID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="nvarchar" MaxLength="255" />
+          <Property Name="semester" Type="nvarchar" MaxLength="255" />
+          <Property Name="section" Type="nvarchar" MaxLength="255" />
+          <Property Name="day1" Type="nvarchar" MaxLength="255" />
+          <Property Name="day2" Type="nvarchar" MaxLength="255" />
+          <Property Name="day3" Type="nvarchar" MaxLength="255" />
+          <Property Name="day4" Type="nvarchar" MaxLength="255" />
+          <Property Name="day5" Type="nvarchar" MaxLength="255" />
+          <Property Name="day6" Type="nvarchar" MaxLength="255" />
+          <Property Name="day7" Type="nvarchar" MaxLength="255" />
+          <Property Name="starttime" Type="nvarchar" MaxLength="255" />
+          <Property Name="endtime" Type="nvarchar" MaxLength="255" />
+          <Property Name="realReg" Type="int" />
+          <Property Name="TotalReg" Type="int" />
+          <Property Name="studyProgram" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseID" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomID" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="room">
+          <Key>
+            <PropertyRef Name="roomID" />
+          </Key>
+          <Property Name="roomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roomNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomType" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="seat" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="semester">
+          <Key>
+            <PropertyRef Name="semesterID" />
+          </Key>
+          <Property Name="semesterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="nvarchar" MaxLength="255" />
+          <Property Name="semester" Type="nvarchar" MaxLength="255" />
+          <Property Name="section" Type="nvarchar" MaxLength="255" />
+          <Property Name="day1" Type="nvarchar" MaxLength="255" />
+          <Property Name="day2" Type="nvarchar" MaxLength="255" />
+          <Property Name="day3" Type="nvarchar" MaxLength="255" />
+          <Property Name="day4" Type="nvarchar" MaxLength="255" />
+          <Property Name="day5" Type="nvarchar" MaxLength="255" />
+          <Property Name="day6" Type="nvarchar" MaxLength="255" />
+          <Property Name="day7" Type="nvarchar" MaxLength="255" />
+          <Property Name="starttime" Type="nvarchar" MaxLength="255" />
+          <Property Name="endtime" Type="nvarchar" MaxLength="255" />
+          <Property Name="realReg" Type="int" />
+          <Property Name="TotalReg" Type="int" />
+          <Property Name="studyProgram" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseID" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomID" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="stageBuilding">
+          <Key>
+            <PropertyRef Name="buildingID" />
+          </Key>
+          <Property Name="buildingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="buildingNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="buildingNoDuplicate" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingNameDuplicate" Type="nvarchar(max)" />
+          <Property Name="buildingName" Type="nvarchar" MaxLength="255" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="stageCourse">
+          <Key>
+            <PropertyRef Name="courseID" />
+          </Key>
+          <Property Name="courseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="courseCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseName" Type="nvarchar" MaxLength="255" />
+          <Property Name="teachType" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="stageFaculty">
+          <Key>
+            <PropertyRef Name="facultyID" />
+          </Key>
+          <Property Name="facultyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="facultyCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyAbbr" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="facultyCodeDuplicate" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyNameDuplicate" Type="nvarchar" MaxLength="255" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="stageInter">
+          <Key>
+            <PropertyRef Name="interID" />
+          </Key>
+          <Property Name="interID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="nvarchar" MaxLength="255" />
+          <Property Name="semester" Type="nvarchar" MaxLength="255" />
+          <Property Name="section" Type="nvarchar" MaxLength="255" />
+          <Property Name="day1" Type="nvarchar" MaxLength="255" />
+          <Property Name="day2" Type="nvarchar" MaxLength="255" />
+          <Property Name="day3" Type="nvarchar" MaxLength="255" />
+          <Property Name="day4" Type="nvarchar" MaxLength="255" />
+          <Property Name="day5" Type="nvarchar" MaxLength="255" />
+          <Property Name="day6" Type="nvarchar" MaxLength="255" />
+          <Property Name="day7" Type="nvarchar" MaxLength="255" />
+          <Property Name="starttime" Type="nvarchar" MaxLength="255" />
+          <Property Name="endtime" Type="nvarchar" MaxLength="255" />
+          <Property Name="realReg" Type="int" />
+          <Property Name="TotalReg" Type="int" />
+          <Property Name="studyProgram" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseID" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomID" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="stageRoom">
+          <Key>
+            <PropertyRef Name="roomID" />
+          </Key>
+          <Property Name="roomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roomNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomType" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="seat" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="stageSemester">
+          <Key>
+            <PropertyRef Name="semesterID" />
+          </Key>
+          <Property Name="semesterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="nvarchar" MaxLength="255" />
+          <Property Name="semester" Type="nvarchar" MaxLength="255" />
+          <Property Name="section" Type="nvarchar" MaxLength="255" />
+          <Property Name="day1" Type="nvarchar" MaxLength="255" />
+          <Property Name="day2" Type="nvarchar" MaxLength="255" />
+          <Property Name="day3" Type="nvarchar" MaxLength="255" />
+          <Property Name="day4" Type="nvarchar" MaxLength="255" />
+          <Property Name="day5" Type="nvarchar" MaxLength="255" />
+          <Property Name="day6" Type="nvarchar" MaxLength="255" />
+          <Property Name="day7" Type="nvarchar" MaxLength="255" />
+          <Property Name="starttime" Type="nvarchar" MaxLength="255" />
+          <Property Name="endtime" Type="nvarchar" MaxLength="255" />
+          <Property Name="realReg" Type="int" />
+          <Property Name="TotalReg" Type="int" />
+          <Property Name="studyProgram" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseID" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomID" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="stageTrimester">
+          <Key>
+            <PropertyRef Name="trimesterID" />
+          </Key>
+          <Property Name="trimesterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="nvarchar" MaxLength="255" />
+          <Property Name="semester" Type="nvarchar" MaxLength="255" />
+          <Property Name="section" Type="nvarchar" MaxLength="255" />
+          <Property Name="day1" Type="nvarchar" MaxLength="255" />
+          <Property Name="day2" Type="nvarchar" MaxLength="255" />
+          <Property Name="day3" Type="nvarchar" MaxLength="255" />
+          <Property Name="day4" Type="nvarchar" MaxLength="255" />
+          <Property Name="day5" Type="nvarchar" MaxLength="255" />
+          <Property Name="day6" Type="nvarchar" MaxLength="255" />
+          <Property Name="day7" Type="nvarchar" MaxLength="255" />
+          <Property Name="starttime" Type="nvarchar" MaxLength="255" />
+          <Property Name="endtime" Type="nvarchar" MaxLength="255" />
+          <Property Name="realReg" Type="int" />
+          <Property Name="TotalReg" Type="int" />
+          <Property Name="studyProgram" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseID" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomID" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="trimester">
+          <Key>
+            <PropertyRef Name="trimesterID" />
+          </Key>
+          <Property Name="trimesterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="nvarchar" MaxLength="255" />
+          <Property Name="semester" Type="nvarchar" MaxLength="255" />
+          <Property Name="section" Type="nvarchar" MaxLength="255" />
+          <Property Name="day1" Type="nvarchar" MaxLength="255" />
+          <Property Name="day2" Type="nvarchar" MaxLength="255" />
+          <Property Name="day3" Type="nvarchar" MaxLength="255" />
+          <Property Name="day4" Type="nvarchar" MaxLength="255" />
+          <Property Name="day5" Type="nvarchar" MaxLength="255" />
+          <Property Name="day6" Type="nvarchar" MaxLength="255" />
+          <Property Name="day7" Type="nvarchar" MaxLength="255" />
+          <Property Name="starttime" Type="nvarchar" MaxLength="255" />
+          <Property Name="endtime" Type="nvarchar" MaxLength="255" />
+          <Property Name="realReg" Type="int" />
+          <Property Name="TotalReg" Type="int" />
+          <Property Name="studyProgram" Type="nvarchar" MaxLength="255" />
+          <Property Name="courseID" Type="nvarchar" MaxLength="255" />
+          <Property Name="facultyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="roomID" Type="nvarchar" MaxLength="255" />
+          <Property Name="buildingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="active" Type="nvarchar" MaxLength="10" />
+          <Property Name="created" Type="datetime" />
+          <Property Name="updated" Type="datetime" />
+        </EntityType>
+        <Function Name="sp_executeInter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_extractBuilding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="registrationModelStoreContainer">
+          <EntitySet Name="building" EntityType="Self.building" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="faculty" EntityType="Self.faculty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inter" EntityType="Self.inter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="room" EntityType="Self.room" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="semester" EntityType="Self.semester" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stageBuilding" EntityType="Self.stageBuilding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stageCourse" EntityType="Self.stageCourse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stageFaculty" EntityType="Self.stageFaculty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stageInter" EntityType="Self.stageInter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stageRoom" EntityType="Self.stageRoom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stageSemester" EntityType="Self.stageSemester" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stageTrimester" EntityType="Self.stageTrimester" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trimester" EntityType="Self.trimester" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="registrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="buildingEntity">
+          <Key>
+            <PropertyRef Name="buildingID" />
+          </Key>
+          <Property Name="buildingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="buildingNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+          <Property Name="facultyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="registrationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="buildingEntities" EntityType="registrationModel.buildingEntity" />
+          <FunctionImport Name="sp_executeInter" />
+          <FunctionImport Name="sp_extractBuilding" />
+          <EntitySet Name="courseEntities" EntityType="registrationModel.courseEntity" />
+          <EntitySet Name="facultyEntities" EntityType="registrationModel.facultyEntity" />
+          <EntitySet Name="interEntities" EntityType="registrationModel.interEntity" />
+          <EntitySet Name="roomEntities" EntityType="registrationModel.roomEntity" />
+          <EntitySet Name="semesterEntities" EntityType="registrationModel.semesterEntity" />
+          <EntitySet Name="stageBuildings" EntityType="registrationModel.stageBuilding" />
+          <EntitySet Name="stageCourses" EntityType="registrationModel.stageCourse" />
+          <EntitySet Name="stageFaculties" EntityType="registrationModel.stageFaculty" />
+          <EntitySet Name="stageInters" EntityType="registrationModel.stageInter" />
+          <EntitySet Name="stageRooms" EntityType="registrationModel.stageRoom" />
+          <EntitySet Name="stageSemesters" EntityType="registrationModel.stageSemester" />
+          <EntitySet Name="stageTrimesters" EntityType="registrationModel.stageTrimester" />
+          <EntitySet Name="trimesterEntities" EntityType="registrationModel.trimesterEntity" />
+        </EntityContainer>
+        <EntityType Name="courseEntity">
+          <Key>
+            <PropertyRef Name="courseID" />
+          </Key>
+          <Property Name="courseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="courseCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="teachType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="facultyEntity">
+          <Key>
+            <PropertyRef Name="facultyID" />
+          </Key>
+          <Property Name="facultyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="facultyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyAbbr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="interEntity">
+          <Key>
+            <PropertyRef Name="interID" />
+          </Key>
+          <Property Name="interID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="semester" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="section" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="starttime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="endtime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="realReg" Type="Int32" />
+          <Property Name="TotalReg" Type="Int32" />
+          <Property Name="studyProgram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="roomEntity">
+          <Key>
+            <PropertyRef Name="roomID" />
+          </Key>
+          <Property Name="roomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roomNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="seat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="semesterEntity">
+          <Key>
+            <PropertyRef Name="semesterID" />
+          </Key>
+          <Property Name="semesterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="semester1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="section" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="starttime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="endtime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="realReg" Type="Int32" />
+          <Property Name="TotalReg" Type="Int32" />
+          <Property Name="studyProgram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="stageBuilding">
+          <Key>
+            <PropertyRef Name="buildingID" />
+          </Key>
+          <Property Name="buildingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="buildingNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="buildingNoDuplicate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingNameDuplicate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="buildingName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="stageCourse">
+          <Key>
+            <PropertyRef Name="courseID" />
+          </Key>
+          <Property Name="courseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="courseCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="teachType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="stageFaculty">
+          <Key>
+            <PropertyRef Name="facultyID" />
+          </Key>
+          <Property Name="facultyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="facultyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyAbbr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="facultyCodeDuplicate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyNameDuplicate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="stageInter">
+          <Key>
+            <PropertyRef Name="interID" />
+          </Key>
+          <Property Name="interID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="semester" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="section" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="starttime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="endtime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="realReg" Type="Int32" />
+          <Property Name="TotalReg" Type="Int32" />
+          <Property Name="studyProgram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="stageRoom">
+          <Key>
+            <PropertyRef Name="roomID" />
+          </Key>
+          <Property Name="roomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roomNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="seat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="stageSemester">
+          <Key>
+            <PropertyRef Name="semesterID" />
+          </Key>
+          <Property Name="semesterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="semester" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="section" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="starttime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="endtime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="realReg" Type="Int32" />
+          <Property Name="TotalReg" Type="Int32" />
+          <Property Name="studyProgram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="stageTrimester">
+          <Key>
+            <PropertyRef Name="trimesterID" />
+          </Key>
+          <Property Name="trimesterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="semester" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="section" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="starttime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="endtime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="realReg" Type="Int32" />
+          <Property Name="TotalReg" Type="Int32" />
+          <Property Name="studyProgram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="trimesterEntity">
+          <Key>
+            <PropertyRef Name="trimesterID" />
+          </Key>
+          <Property Name="trimesterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="semester" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="section" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="day7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="starttime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="endtime" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="realReg" Type="Int32" />
+          <Property Name="TotalReg" Type="Int32" />
+          <Property Name="studyProgram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="courseID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facultyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="roomID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="buildingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+          <Property Name="updated" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="registrationModelStoreContainer" CdmEntityContainer="registrationEntities">
+          <EntitySetMapping Name="buildingEntities">
+            <EntityTypeMapping TypeName="registrationModel.buildingEntity">
+              <MappingFragment StoreEntitySet="building">
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="facultyCode" ColumnName="facultyCode" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="buildingNo" ColumnName="buildingNo" />
+                <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="updated" ColumnName="updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_executeInter" FunctionName="registrationModel.Store.sp_executeInter" />
+          <FunctionImportMapping FunctionImportName="sp_extractBuilding" FunctionName="registrationModel.Store.sp_extractBuilding" />
+          <EntitySetMapping Name="courseEntities">
+            <EntityTypeMapping TypeName="registrationModel.courseEntity">
+              <MappingFragment StoreEntitySet="course">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="teachType" ColumnName="teachType" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="courseCode" ColumnName="courseCode" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="facultyEntities">
+            <EntityTypeMapping TypeName="registrationModel.facultyEntity">
+              <MappingFragment StoreEntitySet="faculty">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="facultyAbbr" ColumnName="facultyAbbr" />
+                <ScalarProperty Name="facultyName" ColumnName="facultyName" />
+                <ScalarProperty Name="facultyCode" ColumnName="facultyCode" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="interEntities">
+            <EntityTypeMapping TypeName="registrationModel.interEntity">
+              <MappingFragment StoreEntitySet="inter">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+                <ScalarProperty Name="studyProgram" ColumnName="studyProgram" />
+                <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+                <ScalarProperty Name="realReg" ColumnName="realReg" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="day7" ColumnName="day7" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="semester" ColumnName="semester" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="interID" ColumnName="interID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roomEntities">
+            <EntityTypeMapping TypeName="registrationModel.roomEntity">
+              <MappingFragment StoreEntitySet="room">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="seat" ColumnName="seat" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomType" ColumnName="roomType" />
+                <ScalarProperty Name="roomNo" ColumnName="roomNo" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="semesterEntities">
+            <EntityTypeMapping TypeName="registrationModel.semesterEntity">
+              <MappingFragment StoreEntitySet="semester">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+                <ScalarProperty Name="studyProgram" ColumnName="studyProgram" />
+                <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+                <ScalarProperty Name="realReg" ColumnName="realReg" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="day7" ColumnName="day7" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="semester1" ColumnName="semester" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="semesterID" ColumnName="semesterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stageBuildings">
+            <EntityTypeMapping TypeName="registrationModel.stageBuilding">
+              <MappingFragment StoreEntitySet="stageBuilding">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+                <ScalarProperty Name="buildingNameDuplicate" ColumnName="buildingNameDuplicate" />
+                <ScalarProperty Name="buildingNoDuplicate" ColumnName="buildingNoDuplicate" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="facultyCode" ColumnName="facultyCode" />
+                <ScalarProperty Name="buildingNo" ColumnName="buildingNo" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stageCourses">
+            <EntityTypeMapping TypeName="registrationModel.stageCourse">
+              <MappingFragment StoreEntitySet="stageCourse">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="teachType" ColumnName="teachType" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="courseCode" ColumnName="courseCode" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stageFaculties">
+            <EntityTypeMapping TypeName="registrationModel.stageFaculty">
+              <MappingFragment StoreEntitySet="stageFaculty">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="facultyNameDuplicate" ColumnName="facultyNameDuplicate" />
+                <ScalarProperty Name="facultyCodeDuplicate" ColumnName="facultyCodeDuplicate" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="facultyAbbr" ColumnName="facultyAbbr" />
+                <ScalarProperty Name="facultyName" ColumnName="facultyName" />
+                <ScalarProperty Name="facultyCode" ColumnName="facultyCode" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stageInters">
+            <EntityTypeMapping TypeName="registrationModel.stageInter">
+              <MappingFragment StoreEntitySet="stageInter">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+                <ScalarProperty Name="studyProgram" ColumnName="studyProgram" />
+                <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+                <ScalarProperty Name="realReg" ColumnName="realReg" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="day7" ColumnName="day7" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="semester" ColumnName="semester" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="interID" ColumnName="interID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stageRooms">
+            <EntityTypeMapping TypeName="registrationModel.stageRoom">
+              <MappingFragment StoreEntitySet="stageRoom">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="seat" ColumnName="seat" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomType" ColumnName="roomType" />
+                <ScalarProperty Name="roomNo" ColumnName="roomNo" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stageSemesters">
+            <EntityTypeMapping TypeName="registrationModel.stageSemester">
+              <MappingFragment StoreEntitySet="stageSemester">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+                <ScalarProperty Name="studyProgram" ColumnName="studyProgram" />
+                <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+                <ScalarProperty Name="realReg" ColumnName="realReg" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="day7" ColumnName="day7" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="semester" ColumnName="semester" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="semesterID" ColumnName="semesterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stageTrimesters">
+            <EntityTypeMapping TypeName="registrationModel.stageTrimester">
+              <MappingFragment StoreEntitySet="stageTrimester">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+                <ScalarProperty Name="studyProgram" ColumnName="studyProgram" />
+                <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+                <ScalarProperty Name="realReg" ColumnName="realReg" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="day7" ColumnName="day7" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="semester" ColumnName="semester" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="trimesterID" ColumnName="trimesterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trimesterEntities">
+            <EntityTypeMapping TypeName="registrationModel.trimesterEntity">
+              <MappingFragment StoreEntitySet="trimester">
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="buildingID" ColumnName="buildingID" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+                <ScalarProperty Name="facultyID" ColumnName="facultyID" />
+                <ScalarProperty Name="courseID" ColumnName="courseID" />
+                <ScalarProperty Name="studyProgram" ColumnName="studyProgram" />
+                <ScalarProperty Name="TotalReg" ColumnName="TotalReg" />
+                <ScalarProperty Name="realReg" ColumnName="realReg" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="day7" ColumnName="day7" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="semester" ColumnName="semester" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="trimesterID" ColumnName="trimesterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

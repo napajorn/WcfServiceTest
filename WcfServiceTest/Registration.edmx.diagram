@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ca9078106da4caa8c3c6d7445ef7846" Name="Diagram1">
+        <EntityTypeShape EntityType="registrationModel.buildingEntity" Width="1.5" PointX="0.875" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="registrationModel.courseEntity" Width="1.5" PointX="3.125" PointY="0.75" />
+        <EntityTypeShape EntityType="registrationModel.facultyEntity" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="registrationModel.interEntity" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="registrationModel.roomEntity" Width="1.5" PointX="4.75" PointY="6.5" />
+        <EntityTypeShape EntityType="registrationModel.semesterEntity" Width="1.5" PointX="5.125" PointY="0.75" />
+        <EntityTypeShape EntityType="registrationModel.stageBuilding" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="registrationModel.stageCourse" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="registrationModel.stageFaculty" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="registrationModel.stageInter" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="registrationModel.stageRoom" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="registrationModel.stageSemester" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="registrationModel.stageTrimester" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="registrationModel.trimesterEntity" Width="1.5" PointX="2.75" PointY="11.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
